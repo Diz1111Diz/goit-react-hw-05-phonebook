@@ -9,6 +9,7 @@ import storage from "./helpers/storage";
 //toast
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import TitleLogo from "./Components/TitleLogo/TitleLogo";
 toast.configure();
 
 function App() {
@@ -56,12 +57,11 @@ function App() {
 
   return (
     <div>
-      <h2>Phonebook</h2>
+      <TitleLogo />
       <ContactForm addNewContact={addNewContact} contacts={contacts} />
       {contacts.length > 1 && (
         <ContactFilter value={filter} changeFilter={changeFilter} />
       )}
-
       <ContactList contacts={filteredContact} deleteContact={deleteContact} />
     </div>
   );
