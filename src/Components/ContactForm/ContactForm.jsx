@@ -28,7 +28,7 @@ const ContactForm = ({ addNewContact, contacts }) => {
       value = e.target.value.replace(/[^A-zА-яЁё\s]+/gi, "");
     }
     if (name === "number") {
-      value = e.target.value.replace(/[^\d\s,+,(,)]+/gi, "");
+      value = e.target.value.replace(/[^\d\s,+,(,),-]+/gi, "");
     }
 
     setForm({ ...form, [name]: value });

@@ -1,21 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { List } from "./ContactList.styles";
+import { List, Item } from "./ContactList.styles";
 import ContactItem from "../ContactItem/ContactItem";
+import { TransitionGroup } from "react-transition-group";
 
 const ContactList = ({ contacts, deleteContact }) => {
   return (
     contacts.length > 0 && (
-      <List>
+      <TransitionGroup component={List}>
         {contacts.map((contact) => (
-          <ContactItem
-            key={contact.id}
-            contact={contact}
-            deleteContact={() => deleteContact(contact.id)}
-          ></ContactItem>
+          <Item key={contact.id}>
+            <ContactItem
+              contact={contact}
+              deleteContact={() => deleteContact(contact.id)}
+            ></ContactItem>
+          </Item>
         ))}
-      </List>
+      </TransitionGroup>
     )
   );
 };
@@ -23,9 +25,9 @@ const ContactList = ({ contacts, deleteContact }) => {
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string,
       name: PropTypes.string,
       number: PropTypes.string,
-      id: PropTypes.string,
     })
   ),
   deleteContact: PropTypes.func,

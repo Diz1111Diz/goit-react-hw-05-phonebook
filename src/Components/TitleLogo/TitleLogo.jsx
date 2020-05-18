@@ -1,7 +1,20 @@
 import React from "react";
+import { CSSTransition } from "react-transition-group";
+import classes from "./TitleLogo.module.css";
+import fadeTransition from "./transitions/fade.module.css";
 
-import { Title } from "./TitleLogo.styles";
-
-const TitleLogo = () => <Title>Phonebook</Title>;
+const TitleLogo = ({ logo }) => {
+  console.log(logo);
+  return (
+    <CSSTransition
+      in={logo}
+      timeout={500}
+      classNames={fadeTransition}
+      unmountOnExit
+    >
+      <h1 className={classes.title}>Phonebook</h1>
+    </CSSTransition>
+  );
+};
 
 export default TitleLogo;

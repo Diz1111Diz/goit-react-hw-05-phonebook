@@ -1,0 +1,13 @@
+.enter {
+    height: 0;
+}
+
+.enter-active {
+    transition: height 500ms ease-out;
+    height: 61px;
+}
+
+.exit-active {
+    transition: height 350ms ease-out;
+    height: 0;
+}
