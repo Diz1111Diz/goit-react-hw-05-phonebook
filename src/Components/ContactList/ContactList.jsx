@@ -7,18 +7,16 @@ import { TransitionGroup } from "react-transition-group";
 
 const ContactList = ({ contacts, deleteContact }) => {
   return (
-    contacts.length > 0 && (
-      <TransitionGroup component={List}>
-        {contacts.map((contact) => (
-          <Item key={contact.id}>
-            <ContactItem
-              contact={contact}
-              deleteContact={() => deleteContact(contact.id)}
-            ></ContactItem>
-          </Item>
-        ))}
-      </TransitionGroup>
-    )
+    <TransitionGroup component={List}>
+      {contacts.map((contact) => (
+        <Item key={contact.id}>
+          <ContactItem
+            contact={contact}
+            deleteContact={() => deleteContact(contact.id)}
+          ></ContactItem>
+        </Item>
+      ))}
+    </TransitionGroup>
   );
 };
 

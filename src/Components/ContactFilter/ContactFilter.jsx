@@ -5,19 +5,12 @@ import fadeTransition from "./transitions/fade.module.css";
 import { CSSTransition } from "react-transition-group";
 const ContactFilter = ({ value, changeFilter, showFilter }) => {
   return (
-    <CSSTransition
-      in={showFilter}
-      timeout={250}
-      classNames={fadeTransition}
-      unmountOnExit
-    >
-      <Container>
-        <Lable htmlFor="name">
-          Find contact by name
-          <Input type="text" value={value} onChange={changeFilter} />
-        </Lable>
-      </Container>
-    </CSSTransition>
+    <Container in={showFilter}>
+      <Lable htmlFor="name">
+        Find contact by name
+        <Input type="text" value={value} onChange={changeFilter} />
+      </Lable>
+    </Container>
   );
 };
 

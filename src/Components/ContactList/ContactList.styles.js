@@ -16,20 +16,20 @@ export const Item = transition.li.attrs({
 })`
 &:enter { 
   opacity: 0;
-  transform: translateX(-100%); 
+  transform: translateY(-100%); 
 }
 &:enter-active {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
   transition: opacity 250ms ease-in, transform 250ms ease-in;
 }
 &:exit { 
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 &:exit-active {
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
   transition: opacity 250ms ease-in, transform 250ms ease-in;
 }
 `;
