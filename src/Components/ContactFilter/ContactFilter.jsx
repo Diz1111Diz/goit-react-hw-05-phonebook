@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Input, Lable, Container } from "./ContactFilter.styles";
-import fadeTransition from "./transitions/fade.module.css";
-import { CSSTransition } from "react-transition-group";
+
 const ContactFilter = ({ value, changeFilter, showFilter }) => {
   return (
     <Container in={showFilter}>
