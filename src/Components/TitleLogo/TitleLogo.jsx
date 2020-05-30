@@ -4,7 +4,6 @@ import classes from "./TitleLogo.module.css";
 import fadeTransition from "./transitions/fade.module.css";
 
 const TitleLogo = ({ logo }) => {
-  console.log(logo);
   return (
     <CSSTransition
       in={logo}
